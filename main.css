@@ -33,7 +33,9 @@ body.black {
 
 select {
     height: 25px;
+    border-radius: 4px;
 }
+
 
 a:visited{
     color: #ebebeb;
@@ -72,6 +74,7 @@ header h1 {
     width: auto;
     font-size: 20px;
     margin: 0.5rem;
+    border-radius: 10px;
 }
 
 .red {
@@ -91,6 +94,27 @@ header h1 {
 .black {
     color: #FFF;
 }
+
+.config.blue{
+    background-color: #80D0C7;
+}
+
+.config.red{
+    background-color: #FF2525;
+}
+
+.config.purple{
+    background-color: #FFCC70;
+}
+
+.config.green{
+    background-color: #16A085;
+}
+
+.config.black{
+    background-color: #a28db6;
+}
+
 
 .colors {
     width: 100%;
@@ -244,6 +268,11 @@ header h1 {
     cursor: pointer;
 }
 
+.explanation {
+    font-size: 20px;
+    width: 500px;
+    padding: 0.5rem;
+}
 
 @media screen and (max-width: 660px) {
    .content {
@@ -262,6 +291,10 @@ header h1 {
    .colors div {
        width: auto;
    }
+
+   .explanation {
+        width: 300px;
+    }
 }
 
 @media screen and (min-width: 1800px) {
@@ -323,4 +356,7 @@ footer {
 .social {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 0.4rem;
 }
+
+

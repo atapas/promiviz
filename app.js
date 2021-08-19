@@ -63,21 +63,48 @@ const selectValue = () => {
     console.log(selected);
     switch (selected) {
         case 'all':
+            explain(
+              `Promise.all takes an <b>array of promises</b> and returns a new priomise.
+              The new promise resolves when <b>all the input promises resolved</b>. In the
+              example below, notice the time when all the promises resolve. It will be 
+              almost equal to the <b>max time</b> taken by a promise(color).`
+            );
             handleAll();
             break;
         case 'any':
+            explain(
+                `Promise.any takes an <b>array of promises</b> and returns a new priomise.
+                It resolves when <b>any</b> of the input promises fulfilled. In the example below,
+                 notice any of the promises resolves when the delay is same.`
+            );
             handleAny();
             break;
         case 'race':
+            explain(
+                `Promise.race takes <b>an array of promises</b> and returns a new priomise. 
+                It resolves when the first promise settles(result/error). In the example below,
+                notice the promises with the <b>least</b> delay resolved first and in turn the <b>race</b> is over.`
+            );
             handleRace();
             break;
         case 'allSettled':
+            explain(
+                `Promise.allSettled takes an <b>array of promises</b> and returns a new priomise. 
+                It resolves when all the promise <b>settled(result/error)</b>. In the
+                example below, notice the time when all the promises settle. It will be 
+                almost equal to the <b>max time</b> taken by a promise(color).`
+            );
             handleAllSettled();
             break;
         case 'handleResolve':
+            explain(
+                `Promise.resolve creates a <b>resolved</b> promise. In the example below, we resolve 
+                the promises one by one!`
+            );
             handleResolve();
             break
         default:
+            explain(``);
             break;
     }
 };
@@ -133,6 +160,10 @@ const setTheme = (theme) => {
     const body = document.body;
     body.classList.remove(itemToRemove);
     body.classList.add(theme);
+
+    const config = document.getElementsByClassName("config");
+    config[0].classList.remove(itemToRemove);
+    config[0].classList.add(theme);
 }
 
 // toggle side nav
@@ -143,6 +174,11 @@ const toggleNav = () => {
     } else {
         navElem.classList.add('active');
     }
+}
+
+const explain = msg => {
+    const explainElem = document.getElementById("explanation-id");
+    explainElem.innerHTML = msg;
 }
 
 // Handle the Promise.all() API
