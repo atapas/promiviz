@@ -129,14 +129,20 @@ const setTheme = (theme) => {
     const itemToRemove = logElem.classList.item(1);
     logElem.classList.remove(itemToRemove);
     logElem.classList.add(theme);
+
+    const body = document.body;
+    body.classList.remove(itemToRemove);
+    body.classList.add(theme);
 }
 
-const openNav = () => {
-    document.getElementById("sidenav-id").style.width = "250px";
-}
-  
-const closeNav = () => {
-    document.getElementById("sidenav-id").style.width = "0";
+// toggle side nav
+const toggleNav = () => {
+    const navElem = document.getElementById("sidenav-id");
+    if (navElem.classList.contains('active')) {
+        navElem.classList.remove('active');
+    } else {
+        navElem.classList.add('active');
+    }
 }
 
 // Handle the Promise.all() API

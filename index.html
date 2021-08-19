@@ -22,24 +22,23 @@
     <link rel="stylesheet" href="main.css">
     <title>PromiViz - Visualize Promise APIs</title>
 </head>
-<body>
+<body class="purple">
     <main>
         <header>
             <h1>🤝 PromiViz</h1>
             <div>
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
             </div>
         </header>
 
         <div id="sidenav-id" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a class="item" href="#" title="Clear Logs" onclick="clearLogs()">Clear Logs</a>
             <a class="item" href="#" title="Persist Logs">
                 Persist Logs
                 <input type="checkbox" id="persist-logs" onclick="persistLogs()" />
             </a>
             <div class="log-settings">
-                <a class="item" href="#">Change Board Theme</a>
+                <a class="item" href="#">Set a Theme</a>
                 <ui class="log-theme">
                     <li title="Set the blue theme" class="blue" onclick="setTheme('blue')"></li>
                     <li title="Set the red theme" class="red" onclick="setTheme('red')"></li>
@@ -57,8 +56,8 @@
                     title="See the source code">
                         <img 
                             src='./images/Octocat.png'
-                        width="40px"
-                        height="40px" />
+                        width="30px"
+                        height="30px" />
                 </a>
                 <a 
                     href="https://twitter.com/intent/tweet?text=PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
@@ -67,8 +66,8 @@
                     title="Tweet about it" >
                         <img 
                             src='./images/twitter.png'
-                            width="40px"
-                            height="40px" />
+                            width="30px"
+                            height="30px" />
                 </a>
                 <a 
                     href="https://blog.greenroots.info" 
@@ -77,8 +76,8 @@
                     title="Read about Promises" >
                         <img 
                             src='./images/blog.png'
-                            width="40px"
-                            height="40px" />
+                            width="30px"
+                            height="30px" />
                 </a>
             </div>
         </div>
@@ -170,7 +169,7 @@
                 </div>
             </div>
 
-            <div id="log-container" class="logs blue">
+            <div id="log-container" class="logs purple">
                 <div class="log-header">
                     <h2>Logs</h2>
                 </div>
