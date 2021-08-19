@@ -4,6 +4,7 @@ body, html {
     font-size: 16px;
     transition: 0.5s;
     font-family: 'Crimson Pro', serif;
+    scroll-behavior: smooth;
 }
 
 body.blue {
