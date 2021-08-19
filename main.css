@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     font-size: 16px;
     transition: 0.5s;
+    font-family: 'Crimson Pro', serif;
 }
 
 body.blue {
@@ -84,7 +85,7 @@ header h1 {
 
 .blue {
     background-color: #8EC5FC;
-    color: #FFF;
+    color: #000;
 }
 
 .black {
@@ -97,6 +98,10 @@ header h1 {
     justify-content: space-around;
     align-items: center;
 }
+.colors .actions {
+    font-size: 20px;
+}
+
 .colors div {
     margin: 10px;
     border: 1px solid #ebebeb;
@@ -286,7 +291,7 @@ footer {
   .sidenav a.item {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     color: #818181;
     display: block;
     transition: 0.3s;
