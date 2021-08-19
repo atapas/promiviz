@@ -30,6 +30,10 @@ let rejectGreen = document.getElementById("green-error-id").checked;
 let rejectBlue = document.getElementById("blue-error-id").checked;
 console.log(`Initial rejections: red - ${rejectRed}, green - ${rejectGreen}, blue - ${rejectBlue}`);
 
+// Retain Logs from LS
+let retainLogs = window.localStorage.getItem('promiviz-persist-logs') || false;
+document.getElementById('persist-logs').checked = retainLogs;
+
 // Call this function when a delay is set for a color
 const selectDelay = () => {
     redDelay = document.getElementById("red-delays-id").value;
@@ -51,6 +55,9 @@ const rejectColor = () => {
 // Call this method when a Promise API is selected
 const selectValue = () => {
     clear();
+    if (!retainLogs) {
+        clearLogs();
+    }
     const apiSelectBox = document.getElementById("apis-list-id");
     const selected = apiSelectBox.value;
     console.log(selected);
@@ -97,6 +104,17 @@ const clearLogs = () => {
     logElem.innerHTML = '';
 }
 
+const persistLogs = () => {
+    const cb = document.getElementById('persist-logs');
+    if(cb.checked) { 
+        retainLogs = true;
+    } else { 
+        retainLogs = false; 
+    }
+    window.localStorage.setItem('promiviz-persist-logs', retainLogs)
+    console.log(`Persistence: ${retainLogs}`);
+}
+
 // Add logs to the log board
 const log = (msg, isError) => {
     const logElem = document.getElementById('log-id');
@@ -111,6 +129,14 @@ const setTheme = (theme) => {
     const itemToRemove = logElem.classList.item(1);
     logElem.classList.remove(itemToRemove);
     logElem.classList.add(theme);
+}
+
+const openNav = () => {
+    document.getElementById("sidenav-id").style.width = "250px";
+}
+  
+const closeNav = () => {
+    document.getElementById("sidenav-id").style.width = "0";
 }
 
 // Handle the Promise.all() API

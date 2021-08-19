@@ -25,7 +25,30 @@
 <body>
     <main>
         <header>
-            <h1>🤝 PromiViz - Visualize Promise APIs</h1>
+            <h1>🤝 PromiViz</h1>
+            <div>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+        </header>
+
+        <div id="sidenav-id" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a class="item" href="#" title="Clear Logs" onclick="clearLogs()">Clear Logs</a>
+            <a class="item" href="#" title="Persist Logs">
+                Persist Logs
+                <input type="checkbox" id="persist-logs" onclick="persistLogs()" />
+            </a>
+            <div class="log-settings">
+                <a class="item" href="#">Change Board Theme</a>
+                <ui class="log-theme">
+                    <li title="Set the blue theme" class="blue" onclick="setTheme('blue')"></li>
+                    <li title="Set the red theme" class="red" onclick="setTheme('red')"></li>
+                    <li title="Set the purple theme" class="purple" onclick="setTheme('purple')"></li>
+                    <li title="Set the green theme" class="green" onclick="setTheme('green')"></li>
+                    <li title="Set the black theme" class="black" onclick="setTheme('black')"></li>
+                </ui>
+            </div>
+            <hr />
             <div class="social">
                 <a 
                     href="https://github.com/atapas/promise-interview-ready" 
@@ -34,8 +57,8 @@
                     title="See the source code">
                         <img 
                             src='./images/Octocat.png'
-                        width="50px"
-                        height="50px" />
+                        width="40px"
+                        height="40px" />
                 </a>
                 <a 
                     href="https://twitter.com/intent/tweet?text=PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
@@ -44,12 +67,21 @@
                     title="Tweet about it" >
                         <img 
                             src='./images/twitter.png'
-                            width="50px"
-                            height="50px" />
+                            width="40px"
+                            height="40px" />
+                </a>
+                <a 
+                    href="https://blog.greenroots.info" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Read about Promises" >
+                        <img 
+                            src='./images/blog.png'
+                            width="40px"
+                            height="40px" />
                 </a>
             </div>
-        </header>
-
+        </div>
         <div class="content">
             <div class="config">
                 <section class="select-api">
@@ -140,18 +172,7 @@
 
             <div id="log-container" class="logs blue">
                 <div class="log-header">
-                    <div class="log-settings">
-                        <h2>Logs</h2>
-                        <ui class="log-theme">
-                            <li title="Set the blue theme" class="blue" onclick="setTheme('blue')"></li>
-                            <li title="Set the red theme" class="red" onclick="setTheme('red')"></li>
-                            <li title="Set the purple theme" class="purple" onclick="setTheme('purple')"></li>
-                            <li title="Set the green theme" class="green" onclick="setTheme('green')"></li>
-                            <li title="Set the black theme" class="black" onclick="setTheme('black')"></li>
-                        </ui>
-                        
-                    </div>
-                        <span class="close" title="Clear Logs" onclick="clearLogs()">clear</span>
+                    <h2>Logs</h2>
                 </div>
                 <ul id='log-id'></ul>
             </div>
