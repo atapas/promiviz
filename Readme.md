@@ -67,7 +67,7 @@ Here are some of the future enhencements planned:
 Well, I built this app with the following technologies:
 - HTML
 - CSS
-- JAvaScript
+- (Plain New) JavaScript
 
 True, No React, Angular, Vue, yet. As it was done as an initial prototype, I may move the app to a framework later.
 
