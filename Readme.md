@@ -24,9 +24,6 @@ Here is a quick demo of the app. I hope you enjoy it.
 
 Liked it? Please give a ⭐️ to <b>PromiViz</b> to grow 💪 stronger.
 
-### Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
-
-[![Stargazers repo roster for @atapas/promiviz](https://reporoster.com/stars/atapas/promiviz)](https://github.com/atapas/promiviz/stargazers)
 
 # 💻 Use PromiViz
 Please access PromiViz using the URL:
