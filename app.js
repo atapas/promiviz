@@ -184,6 +184,7 @@ const toggleNav = () => {
     }
 }
 
+// close the nav bar
 const closeNav = () => {
     const navElem = document.getElementById("sidenav-id");
     navElem.classList.remove('active');
