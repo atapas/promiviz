@@ -73,8 +73,8 @@ const selectValue = () => {
         case 'all':
             explain(
               `Promise.all takes an <b>array of promises</b> and returns a new priomise.
-              The new promise resolves when <b>all the input promises resolved</b>. In the
-              example below, notice the time when all the promises resolve. It will be 
+              The new promise resolves when <b>all input promises are resolved</b>. In the
+              example below, notice the time when all promises resolve. It will be 
               almost equal to the <b>max time</b> taken by a promise(color).`
             );
             handleAll();
@@ -82,8 +82,8 @@ const selectValue = () => {
         case 'any':
             explain(
                 `Promise.any takes an <b>array of promises</b> and returns a new priomise.
-                It resolves when <b>any</b> of the input promises fulfilled. In the example below,
-                 notice any of the promises resolves when the delay is same.`
+                It resolves when <b>any</b> of the input promises is fulfilled. In the example below,
+                 notice <b>any</b> of the promises resolves when you apply the same delay.`
             );
             handleAny();
             break;
@@ -91,15 +91,15 @@ const selectValue = () => {
             explain(
                 `Promise.race takes <b>an array of promises</b> and returns a new priomise. 
                 It resolves when the first promise settles(result/error). In the example below,
-                notice the promises with the <b>least</b> delay resolved first and in turn the <b>race</b> is over.`
+                notice the promises with the <b>least</b> delay resolves first and in turn, the <b>race</b> is over.`
             );
             handleRace();
             break;
         case 'allSettled':
             explain(
                 `Promise.allSettled takes an <b>array of promises</b> and returns a new priomise. 
-                It resolves when all the promise <b>settled(result/error)</b>. In the
-                example below, notice the time when all the promises settle. It will be 
+                It resolves when all promises <b> are settled(result/error)</b>. In the
+                example below, notice the time when all promises settle. It will be 
                 almost equal to the <b>max time</b> taken by a promise(color).`
             );
             handleAllSettled();
@@ -182,6 +182,11 @@ const toggleNav = () => {
     } else {
         navElem.classList.add('active');
     }
+}
+
+const closeNav = () => {
+    const navElem = document.getElementById("sidenav-id");
+    navElem.classList.remove('active');
 }
 
 const explain = msg => {
