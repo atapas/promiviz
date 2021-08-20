@@ -20,7 +20,7 @@
 # 🚀 Demo
 Here is a quick demo of the app. I hope you enjoy it.
 
-> [The Demo Link](https://www.youtube.com/watch?v=CB9xkhzkrYE)
+> [The Demo Link](https://www.youtube.com/watch?v=webs_tRKIIg)
 
 Liked it? Please give a ⭐️ to <b>PromiViz</b> to grow 💪 stronger.
 
