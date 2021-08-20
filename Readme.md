@@ -4,9 +4,11 @@
 <p align="center">
      <a href="https://promiviz.vercel.app/" target="blank">View Demo</a>
      ·
-     <a href="https://github.com/atapas/promiviz/issues/new/choose">Report Bug</a>
+     <a href="https://blog.greenroots.info/series/javascript-promises" target="blank"> Learn </a>
+     .
+     <a href="https://github.com/atapas/promiviz/issues/new/choose" target="blank">Report Bug</a>
      ·
-     <a href="https://github.com/atapas/promiviz/issues/new/choose">Request Feature</a>
+     <a href="https://github.com/atapas/promiviz/issues/new/choose" target="blank">Request Feature</a>
  </p>
 
 <p align="center">
