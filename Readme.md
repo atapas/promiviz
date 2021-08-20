@@ -1,25 +1,18 @@
-# PromiViz
 
-
+# 🤝 Introducing `PromiViz`
+<p align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!</p>
 <p align="center">
- <div style="font-size:70px;text-align:center">🤝</div>
- <div style="font-size:70px;text-align:center">PromiViz</div>
-</p>
-
-<h4 align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!</h4>
-
-<p align="center">
-    <a href="https://promiviz.vercel.app/" target="blank">View Demo</a>
-    ·
-    <a href="https://github.com/atapas/promiviz/issues/new/choose">Report Bug</a>
-    ·
-    <a href="https://github.com/atapas/promiviz/issues/new/choose">Request Feature</a>
-</p>
-
-# 👋 Introducing `PromiViz`
+     <a href="https://promiviz.vercel.app/" target="blank">View Demo</a>
+     ·
+     <a href="https://github.com/atapas/promiviz/issues/new/choose">Report Bug</a>
+     ·
+     <a href="https://github.com/atapas/promiviz/issues/new/choose">Request Feature</a>
+ </p>
 <p align="center">
  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629445649182/QtHHPixFe.png">
 </p>
+
+
 
 `PromiViz` is an opensource tool to visualize the JavaScript Promise APIs. It is a playground for developers to configure promises with delays, resolve/reject, and more.
 
