@@ -6,7 +6,7 @@
  <div style="font-size:70px;text-align:center">PromiViz</div>
 </p>
 
-<h4 align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!</h4>
+<h4 align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever! A tool for `developers` by a `developer`.</h4>
 
 <p align="center">
     <a href="https://promiviz.vercel.app/" target="blank">View Demo</a>
