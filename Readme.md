@@ -1,6 +1,6 @@
 
 # 🤝 Introducing `PromiViz`
-<p align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!</p>
+<p align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever! A tool built for dvelopers by a developer.</p>
 <p align="center">
      <a href="https://promiviz.vercel.app/" target="blank">View Demo</a>
      ·
