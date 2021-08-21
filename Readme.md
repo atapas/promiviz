@@ -26,7 +26,7 @@ Liked it? Please give a ⭐️ to <b>PromiViz</b> to grow 💪 stronger.
 
 ## Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
 
-[![Stargazers repo roster for @atapas/promiviz](https://reporoster.com/stars/promiviz/webapis-playground)](https://github.com/promiviz/webapis-playground/stargazers)
+[![Stargazers repo roster for @atapas/promiviz](https://reporoster.com/stars/atapas/promiviz)](https://github.com/atapas/promiviz/stargazers)
 
 
 # 💻 Use PromiViz
