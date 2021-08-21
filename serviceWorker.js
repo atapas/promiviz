@@ -1,4 +1,7 @@
 const staticPromiViz = "promiviz"
+
+const expectedCaches = [staticPromiViz];
+
 const assets = [
   "/",
   "/index.html",
@@ -16,7 +19,23 @@ self.addEventListener("install", installEvent => {
       cache.addAll(assets)
     })
   )
-})
+});
+
+self.addEventListener('activate', event => {
+  // delete any caches that aren't in expectedCaches
+  // which will get rid of promiviz
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (!expectedCaches.includes(key)) {
+          return caches.delete(key);
+        }
+      })
+    )).then(() => {
+      console.log('promiviz now ready to handle fetches!');
+    })
+  );
+});
 
 self.addEventListener("fetch", fetchEvent => {
     fetchEvent.respondWith(
@@ -24,4 +43,4 @@ self.addEventListener("fetch", fetchEvent => {
         return res || fetch(fetchEvent.request)
       })
     )
-  })
+});
