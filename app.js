@@ -40,7 +40,7 @@ console.log(`Initial rejections: red - ${rejectRed}, green - ${rejectGreen}, blu
 
 // Retain Logs from LS
 let retainLogs = window.localStorage.getItem('promiviz-persist-logs') || false;
-document.getElementById('persist-logs').checked = retainLogs;
+document.getElementById('persist-logs').checked = (retainLogs === 'true');
 
 // Call this function when a delay is set for a color
 const selectDelay = () => {
