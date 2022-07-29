@@ -291,39 +291,39 @@ const handleRace = async () => {
 
 // Handle the Promise.allSettled() API
 const handleAllSettled = async () => {
-    try {
-        log(`🕛 Started settling of the colors using Promise.allSettled([red, green, blue])`); 
-        const red = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                rejectRed ? reject('red') : resolve('red');
-            }, redDelay);
-        });
-        
-        const green = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                rejectGreen ? reject('green') : resolve('green');
-            }, greenDelay);
-        });
-        
-        const blue = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                rejectBlue ? reject('blue') : resolve('blue');
-            }, blueDelay);
-        });
+    log(`🕛 Started settling of the colors using Promise.allSettled([red, green, blue])`); 
+    
+    const red = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            rejectRed ? reject('red') : resolve('red');
+        }, redDelay);
+    });
+    
+    const green = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            rejectGreen ? reject('green') : resolve('green');
+        }, greenDelay);
+    });
+    
+    const blue = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            rejectBlue ? reject('blue') : resolve('blue');
+        }, blueDelay);
+    });
 
-        const colors = await Promise.allSettled([red, green, blue]);
-        console.log(colors);
-        for (const {status, value, reason} of colors) {
-            if (status === 'rejected') {
-                throw new Error(reason)
-            } else if (status === 'fulfilled') {
-                setValues(value, value, '3s');
-            }
+    const colors = await Promise.allSettled([red, green, blue]);
+
+    console.log(colors);
+
+    for (const {status, value, reason} of colors) {
+        if (status === 'rejected') {
+            log(`❌ Rejected the color ${reason}.`, true);
+        } else if (status === 'fulfilled') {
+            setValues(value, value, '3s');
         }
-        log(`✔️ Finished settling of the colors using Promise.allSettled([red, green, blue])`); 
-    }catch(err) {
-        log(`❌ Rejected the color ${err}.`, true);
-    };
+    }
+
+    log(`✔️ Finished settling of the colors using Promise.allSettled([red, green, blue])`); 
 };
 
 // Handle the Promise.resolve() API
@@ -363,6 +363,3 @@ const handleResolve = async () => {
         log(`❌ Rejected the color ${err}.`, true);
     };
 };
-
-
-    
