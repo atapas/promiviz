@@ -78,6 +78,22 @@ header h1 {
     border-radius: 10px;
 }
 
+/* Atul's code */
+
+.select-api select{
+    background: rgb(252, 193, 252);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid rgb(168, 123, 168);
+    transition: 0.2s ease-in-out;
+}
+.select-api select:hover{
+    background-color: rgb(250, 219, 250);
+}
+
+/*   end     */
+
 .red {
     background-color: #f43f3f;
     color: #fff;
@@ -126,6 +142,25 @@ header h1 {
 .colors .actions {
     font-size: 20px;
 }
+
+/* Atul's code */
+
+.colors .actions select{
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(252, 193, 252);
+    border: 1px solid rgb(168, 123, 168);
+    transition: 0.2s ease-in-out;
+}
+.colors .actions select:hover{
+    background: rgb(250, 219, 250);
+}
+#green-error-id{
+    background: #111;
+}
+
+/*   end    */
 
 .colors div {
     margin: 10px;
