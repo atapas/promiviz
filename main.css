@@ -327,8 +327,12 @@ footer {
     text-decoration: none;
     font-size: 20px;
     color: #818181;
-    display: block;
+    display: flex;
     transition: 0.3s;
+  }
+
+  .sidenav a.item input {
+    margin-top: 8px;
   }
   
   .sidenav a:hover {
