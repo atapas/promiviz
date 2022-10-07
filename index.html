@@ -14,10 +14,10 @@
     <link rel="apple-touch-icon" href="images/icons/android-chrome-384x384.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
-    
+
     <meta name="description" content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!">
     <meta name="robots" content="index, follow" />
-    
+
     <!-- Open Graph support -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="PromiViz - Visualize Promise APIs" />
@@ -25,25 +25,25 @@
     <meta property="og:image" content="https://promiviz.vercel.app/social/landing.png" />
     <meta property="og:url" content="https://promiviz.vercel.app/" />
     <meta property="og:site_name" content="PromiViz" />
-    
+
     <!-- Twitter Card support -->
     <meta name="twitter:title" content="PromiViz - Visualize Promise APIs">
     <meta name="twitter:description" content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!">
-    <meta name="twitter:image" content="https://promiviz.vercel.app/social/landing.png"> 
+    <meta name="twitter:image" content="https://promiviz.vercel.app/social/landing.png">
     <meta name="twitter:site" content="@tapasadhikary">
     <meta name="twitter:creator" content="@tapasadhikary">
-    
+
     <!-- Fav Icon support -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>">
-    
+
     <!-- Font support -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
-    
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="main.css">
-    
+
     <title>PromiViz - Visualize Promise APIs</title>
 </head>
 <body class="purple">
@@ -64,42 +64,50 @@
             </a>
             <div class="log-settings">
                 <a class="item" href="#">Set a Theme</a>
-                <ui class="log-theme">
+
+                <ul class="log-theme">
                     <li title="Set the blue theme" class="blue" onclick="setTheme('blue')"></li>
                     <li title="Set the red theme" class="red" onclick="setTheme('red')"></li>
                     <li title="Set the purple theme" class="purple" onclick="setTheme('purple')"></li>
                     <li title="Set the green theme" class="green" onclick="setTheme('green')"></li>
                     <li title="Set the black theme" class="black" onclick="setTheme('black')"></li>
-                </ui>
+                    <li title="Set the orange theme" class="orange" onclick="setTheme('orange')"></li>
+                    <li title="Set the peach theme" class="peach" onclick="setTheme('peach')"></li>
+                    
+                  </ul>
+                <ul class="log-theme" style="margin:0">
+                  <li title="Set the lavender theme" class="lavender" onclick="setTheme('lavender')"></li>
+                  <li title="Set the brown theme" class="brown" onclick="setTheme('brown')"></li>
+                </ul>
             </div>
             <hr />
             <div class="social">
-                <a 
-                    href="https://github.com/atapas/promiviz" 
+                <a
+                    href="https://github.com/atapas/promiviz"
                     target="_blank"
-                    rel="noopener noreferrer" 
+                    rel="noopener noreferrer"
                     title="See the source code">
-                        <img 
+                        <img
                             src='./images/github.png'
                         width="30px"
                         height="30px" />
                 </a>
-                <a 
-                    href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
+                <a
+                    href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Tweet about it" >
-                        <img 
+                        <img
                             src='./images/twitter.png'
                             width="30px"
                             height="30px" />
                 </a>
-                <a 
-                    href="https://blog.greenroots.info/series/javascript-promises" 
+                <a
+                    href="https://blog.greenroots.info/series/javascript-promises"
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Read about Promises" >
-                        <img 
+                        <img
                             src='./images/blog.png'
                             width="30px"
                             height="30px" />
@@ -123,7 +131,7 @@
             </div>
 
             <div id='explanation-id' class='explanation'>
-                
+
             </div>
 
             <div class="colors">
@@ -205,10 +213,10 @@
                 <ul id='log-id'></ul>
             </div>
             <footer>
-                Made with ❤️ by 
-                <a 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                Made with ❤️ by
+                <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href="https://twitter.com/tapasadhikary">
                     @tapasadhikary
                 </a>
