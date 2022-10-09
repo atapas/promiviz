@@ -12,7 +12,7 @@
  </p>
 
 <p align="center">
- <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1629445649182/QtHHPixFe.png">
+ <img src="social/landing2.png">
 </p>
 
 `PromiViz` is an open-source tool to visualize the JavaScript Promise APIs. It is a playground for developers to configure promises with delays, resolve/reject, and more.
