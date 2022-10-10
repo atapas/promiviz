@@ -1,12 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 body, html {
     padding: 0;
     margin: 0;
     font-size: 16px;
     transition: 0.5s;
-    font-family: 'Crimson Pro', serif;
+    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
 }
-
 body.blue {
     background-color: #0093e9;
     background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
@@ -74,6 +74,7 @@ header h1 {
     align-items: center;
     width: auto;
     font-size: 20px;
+    font-weight: 500;
     margin: 0.5rem;
     border-radius: 10px;
 }
@@ -136,7 +137,7 @@ header h1 {
 }
 
 .colors .color-text {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 900;
     font-family: monospace;
     text-transform: uppercase;
@@ -270,8 +271,8 @@ header h1 {
 }
 
 .explanation {
-    font-size: 25px;
-    width: 550px;
+    font-size: 18px;
+    width: 650px;
     padding: 0.5rem;
 }
 
