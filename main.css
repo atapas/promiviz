@@ -52,7 +52,9 @@ header {
     display: flex;
     justify-content: space-between;
 }
-
+header span{
+    color:crimson;
+}
 header h1 {
     display: flex;
     align-items: center;
