@@ -1,6 +1,6 @@
 
 # 🤝 Introducing `PromiViz`
-<p align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever! A tool built for developers by a developer.</p>
+<p align="center">Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster than ever! A tool built for developers by a developer.</p>
 <p align="center">
      <a href="https://promiviz.vercel.app/" target="blank">View Demo</a>
      ·
@@ -35,20 +35,20 @@ Please access PromiViz using the URL:
 > https://promiviz.vercel.app/
 
 # 🔥 Features
-`PromiViz` comes with a bundle of features already. You can do the following with it,
+`PromiViz` comes with a bundle of features already. You can do the following with it:
 
-- Schedule a promise to resolve/reject after a delay
+- Schedule a promise to resolve/reject after a delay.
 - Reject a promise specifically.
 - Run and test all the Promise APIs, `all`, `any`, `allSettled`, `race`, `resolve`, `reject`.
-- Shows logs of the execution of the promises. The log includes time, text, and emojis to indicate the status of the promise.
+- Show logs of the execution of the promises. The log includes time, text, and emojis to indicate the status of the promise.
 - Ability to retain the logs for a session.
 - Ability to clear the logs.
 - Ability to set themes.
 - Responsive and mobile-friendly.
-- It is a PWA(Progressive Web App)
+- It is a PWA(Progressive Web App).
 
 # How is it helpful to you?
-JavaScript promises are a bit complex topic to understand for beginners. However, your interviewers will love to ask questions about this topic. Hence an in-depth understanding
+JavaScript promises are a bit of a complex topic to understand for beginners. However your interviewers will love to ask questions about this topic. Hence an in-depth understanding
 of how it works internally would be a great advantage.
 
 `PromiViz` will help you with that. You can run the promises, customize them, and see the execution
@@ -57,14 +57,14 @@ logs to understand what's happening. You can also modify the settings, try diffe
 # 🦄 What are the future enhancements?
 Here are some of the future enhancements planned:
 - Schedule a promise to resolve/reject after a delay with a custom message.
-- Ability to add more promises(beyond the three out-of-the-boxes).
+- Ability to add more promises (beyond the three out-of-the-boxes).
 - Ability to run customized examples from the app.
 - Ability to run the promises in a loop to showcase the loop-related use-cases.
 - Persist a history of promise runs.
 - Persist logs across sessions.
 - More themes.
 # 🍔 Built With
-Well, I built this app with the following technologies:
+I built this app with the following technologies:
 - HTML
 - CSS
 - (Plain New) JavaScript
@@ -112,6 +112,3 @@ If you found the app helpful, consider supporting us with a coffee.
 <h3 align="center">
 A ⭐️ to <b>PromiViz</b> is to build it 💪 stronger.
 </h3>
-
-
-
