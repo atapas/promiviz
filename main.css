@@ -9,19 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(180deg, #cf2180 0%, #708ad4 99%);
-  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
-  border-radius: 80px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-image: linear-gradient(180deg, #b30000 0%, #4268d4 99%);
-}
-
 body.blue {
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
@@ -402,4 +389,40 @@ footer {
 .social a:hover {
   transform: scale(1.1);
   transition: transform 0.1s ease-in;
+}
+
+/*CUSTOM SCROL BAR*/
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  box-shadow: inset 0 0 5px #494343;
+  border-radius: 10px;
+}
+
+body.blue::-webkit-scrollbar-thumb {
+  background: linear-gradient(160deg, #054941 0%, #328ec3 100%);
+  border-radius: 15px;
+}
+
+body.red::-webkit-scrollbar-thumb {
+  background: linear-gradient(147deg, #d6bd18 0%, #af0b0b 74%);
+  border-radius: 15px;
+}
+
+body.purple::-webkit-scrollbar-thumb {
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  border-radius: 15px;
+}
+
+body.green::-webkit-scrollbar-thumb {
+  background: linear-gradient(132deg, #046652 0%, #ffd426 100%);
+  border-radius: 15px;
+}
+
+body.black::-webkit-scrollbar-thumb {
+  background: linear-gradient(62deg, #c3a7db 0%, #272222 100%);
+  border-radius: 15px;
 }
