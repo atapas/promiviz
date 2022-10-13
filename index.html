@@ -47,66 +47,68 @@
     <title>PromiViz - Visualize Promise APIs</title>
 </head>
 <body class="purple">
-    <main>
+    
         <header>
             <h1>🤝 PromiViz</h1>
             <div>
                 <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
             </div>
+
+            <div id="sidenav-id" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a class="item" href="#" title="Clear Logs" onclick="clearLogs()">Clear Logs</a>
+                <a class="item" href="#" title="Persist Logs">
+                    Persist Logs
+                    <input type="checkbox" id="persist-logs" onclick="persistLogs()" />
+                </a>
+                <div class="log-settings">
+                    <a class="item" href="#">Set a Theme</a>
+                    <ui class="log-theme">
+                        <li title="Set the blue theme" class="blue" onclick="setTheme('blue')"></li>
+                        <li title="Set the red theme" class="red" onclick="setTheme('red')"></li>
+                        <li title="Set the purple theme" class="purple" onclick="setTheme('purple')"></li>
+                        <li title="Set the green theme" class="green" onclick="setTheme('green')"></li>
+                        <li title="Set the black theme" class="black" onclick="setTheme('black')"></li>
+                    </ui>
+                </div>
+                <hr />
+                <div class="social">
+                    <a 
+                        href="https://github.com/atapas/promiviz" 
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        title="See the source code">
+                            <img 
+                                src='./images/github.png'
+                            width="30px"
+                            height="30px" />
+                    </a>
+                    <a 
+                        href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Tweet about it" >
+                            <img 
+                                src='./images/twitter.png'
+                                width="30px"
+                                height="30px" />
+                    </a>
+                    <a 
+                        href="https://blog.greenroots.info/series/javascript-promises" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Read about Promises" >
+                            <img 
+                                src='./images/blog.png'
+                                width="30px"
+                                height="30px" />
+                    </a>
+                </div>
+            </div>
         </header>
 
-        <div id="sidenav-id" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a class="item" href="#" title="Clear Logs" onclick="clearLogs()">Clear Logs</a>
-            <a class="item" href="#" title="Persist Logs">
-                Persist Logs
-                <input type="checkbox" id="persist-logs" onclick="persistLogs()" />
-            </a>
-            <div class="log-settings">
-                <a class="item" href="#">Set a Theme</a>
-                <ui class="log-theme">
-                    <li title="Set the blue theme" class="blue" onclick="setTheme('blue')"></li>
-                    <li title="Set the red theme" class="red" onclick="setTheme('red')"></li>
-                    <li title="Set the purple theme" class="purple" onclick="setTheme('purple')"></li>
-                    <li title="Set the green theme" class="green" onclick="setTheme('green')"></li>
-                    <li title="Set the black theme" class="black" onclick="setTheme('black')"></li>
-                </ui>
-            </div>
-            <hr />
-            <div class="social">
-                <a 
-                    href="https://github.com/atapas/promiviz" 
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    title="See the source code">
-                        <img 
-                            src='./images/github.png'
-                        width="30px"
-                        height="30px" />
-                </a>
-                <a 
-                    href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Tweet about it" >
-                        <img 
-                            src='./images/twitter.png'
-                            width="30px"
-                            height="30px" />
-                </a>
-                <a 
-                    href="https://blog.greenroots.info/series/javascript-promises" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Read about Promises" >
-                        <img 
-                            src='./images/blog.png'
-                            width="30px"
-                            height="30px" />
-                </a>
-            </div>
-        </div>
-        <div class="content">
+        
+        <main class="content">
             <div class="config purple">
                 <section class="select-api">
                     <label for="apis-list-id">Select an API:</label>
@@ -204,18 +206,18 @@
                 </div>
                 <ul id='log-id'></ul>
             </div>
-            <footer>
-                Made with ❤️ by 
-                <a 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    href="https://twitter.com/tapasadhikary">
-                    @tapasadhikary
-                </a>
-            </footer>
-        </div>
-    </main>
+        </main>
 
+        <footer>
+            Made with ❤️ by 
+            <a 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                href="https://twitter.com/tapasadhikary">
+                @tapasadhikary
+            </a>
+        </footer>
+    
     <script src="./app.js"></script>
 </body>
 </html>
