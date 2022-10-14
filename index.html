@@ -42,25 +42,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="hamburgerMenu.css">
     <link rel="stylesheet" href="main.css">
     
+    <!-- Script -->
+    <script defer src="./app.js"></script>
+
     <title>PromiViz - Visualize Promise APIs</title>
 </head>
 <body class="purple">
     <main>
         <header>
             <h1>🤝 PromiViz</h1>
-            <div>
-                <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
+            <div id="nav-icon" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </header>
 
         <div id="sidenav-id" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a class="item" href="#" title="Clear Logs" onclick="clearLogs()">Clear Logs</a>
-            <a class="item" href="#" title="Persist Logs">
+            <a class="item" href="#" title="Persist Logs" onclick="persistLogs()">
                 Persist Logs
-                <input type="checkbox" id="persist-logs" onclick="persistLogs()" />
+                <input type="checkbox" id="persist-logs" />
             </a>
             <div class="log-settings">
                 <a class="item" href="#">Set a Theme</a>
@@ -72,40 +78,8 @@
                     <li title="Set the black theme" class="black" onclick="setTheme('black')"></li>
                 </ui>
             </div>
-            <hr />
-            <div class="social">
-                <a 
-                    href="https://github.com/atapas/promiviz" 
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    title="See the source code">
-                        <img 
-                            src='./images/github.png'
-                        width="30px"
-                        height="30px" />
-                </a>
-                <a 
-                    href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Tweet about it" >
-                        <img 
-                            src='./images/twitter.png'
-                            width="30px"
-                            height="30px" />
-                </a>
-                <a 
-                    href="https://blog.greenroots.info/series/javascript-promises" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Read about Promises" >
-                        <img 
-                            src='./images/blog.png'
-                            width="30px"
-                            height="30px" />
-                </a>
-            </div>
         </div>
+
         <div class="content">
             <div class="config purple">
                 <section class="select-api">
@@ -204,18 +178,51 @@
                 </div>
                 <ul id='log-id'></ul>
             </div>
-            <footer>
+        </div>
+        <footer>
+            <span>
                 Made with ❤️ by 
                 <a 
                     target="_blank" 
+                    id="tapasadhikary"
                     rel="noopener noreferrer" 
                     href="https://twitter.com/tapasadhikary">
                     @tapasadhikary
                 </a>
-            </footer>
-        </div>
+            </span>
+            <div class="social">
+                <a 
+                    href="https://github.com/atapas/promiviz" 
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    title="See the source code">
+                        <img 
+                            src='./images/github.png'
+                        width="30px"
+                        height="30px" />
+                </a>
+                <a 
+                    href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Tweet about it" >
+                        <img 
+                            src='./images/twitter.png'
+                            width="30px"
+                            height="30px" />
+                </a>
+                <a 
+                    href="https://blog.greenroots.info/series/javascript-promises" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Read about Promises" >
+                        <img 
+                            src='./images/blog.png'
+                            width="30px"
+                            height="30px" />
+                </a>
+            </div>
+        </footer>
     </main>
-
-    <script src="./app.js"></script>
 </body>
 </html>
