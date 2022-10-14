@@ -124,6 +124,7 @@ header h1 {
     justify-content: space-around;
     align-items: center;
 }
+
 .colors .actions {
     font-size: 20px;
 }
@@ -134,8 +135,12 @@ header h1 {
     border-radius: 5px;
     width: 100%;
     text-align: center;
+    transition: 0.2s all ease-out;
 }
-
+.colors div:hover{
+    background-color:#312f3155;
+    box-shadow: 7px 7px 0px 0px rgba(193, 41, 223, 0.279);
+}
 .colors .color-text {
     font-size: 35px;
     font-weight: 900;
@@ -166,7 +171,7 @@ header h1 {
 .logs {
     padding: 10px;
     margin: 15px;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: black;
     color: white;
     font: 1.3rem Inconsolata, monospace;
