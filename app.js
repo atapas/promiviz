@@ -45,11 +45,25 @@ document.getElementById('persist-logs').checked = (retainLogs === 'true');
 // Call this function when a delay is set for a color
 const selectDelay = () => {
     redDelay = document.getElementById("red-delays-id").value;
-    greenDelay = document.getElementById("green-delays-id").value;;
-    blueDelay = document.getElementById("blue-delays-id").value;;
+    greenDelay = document.getElementById("green-delays-id").value;
+    blueDelay = document.getElementById("blue-delays-id").value;
     console.log(`Delays: red - ${redDelay}, green - ${greenDelay}, blue - ${blueDelay}`);
     selectValue();
 }
+
+// Create timer
+const startTimer = (timerStop) => {
+    var timer = 0
+    var x = setInterval(function() {
+        document.getElementById("millisecond").innerHTML = timer; 
+        document.getElementById("second").innerHTML = Math.floor(timer / 1000); 
+        timer += 1;
+        if ((timer / 1000) === timerStop+1 ) {
+            clearInterval(x);
+        }
+    }, 1);
+}
+
 
 // Call this function when a reject flag is set for a color
 const rejectColor = () => {
@@ -66,9 +80,11 @@ const selectValue = () => {
     if (!retainLogs) {
         clearLogs();
     }
+
     const apiSelectBox = document.getElementById("apis-list-id");
-    const selected = apiSelectBox.value;
+    const selected = apiSelectBox.value;    
     console.log(selected);
+
     switch (selected) {
         case 'all':
             explain(
@@ -219,7 +235,7 @@ const handleAll = async () => {
         const colors = await Promise.all([red, green, blue]);
         console.log(colors);
         colors.forEach(color => {
-            setValues(color, color, '3s');
+            setValues(color, color, Math.max([redDelay, greenDelay, blueDelay]) + 's');
         })
         log(`✔️ Finished handling all the colors using Promise.all([red, green, blue])`); 
     }catch(err) {
@@ -251,7 +267,7 @@ const handleAny = async () => {
 
         const color = await Promise.any([red, green, blue]);
         log(`${color} got picked up! Lucky one.`);
-        setValues(color, color, '3s');
+        setValues(color, color, Math.min([redDelay, greenDelay, blueDelay]) + 's');
         log(`✔️Finished handling any of the colors using Promise.any([red, green, blue])`); 
     }catch(err) {
         log(`❌ Rejected the color ${err}.`, true);
@@ -281,7 +297,7 @@ const handleRace = async () => {
 
         const color = await Promise.race([ green, red, blue]);
         log(`${color} own the race! Great champ.`);
-        setValues(color, color, '3s');
+        setValues(color, color, Math.min([redDelay, greenDelay, blueDelay]) + 's');
         log(`✔️ Finished racing of the colors using Promise.race([red, green, blue])`);
         
     } catch(err) {
@@ -319,7 +335,7 @@ const handleAllSettled = async () => {
         if (status === 'rejected') {
             log(`❌ Rejected the color ${reason}.`, true);
         } else if (status === 'fulfilled') {
-            setValues(value, value, '3s');
+            setValues(value, value, Math.max([redDelay, greenDelay, blueDelay]) + 's');
         }
     }
 
@@ -350,15 +366,15 @@ const handleResolve = async () => {
 
         const redResolved = await Promise.resolve(red);
         log(`✔️ Finished resolving ${redResolved} using Promise.resolve(${redResolved})`); 
-        setValues(redResolved, redResolved, '3s');
+        setValues(redResolved, redResolved, redDelay);
         
         const greenResolved = await Promise.resolve(green);
         log(`✔️ Finished resolving ${greenResolved} using Promise.resolve(${greenResolved})`); 
-        setValues(greenResolved, greenResolved, '3s');
+        setValues(greenResolved, greenResolved, greenDelay);
 
         const blueResolved = await Promise.resolve(blue);
         log(`✔️ Finished resolving ${blueResolved} using Promise.resolve(${blueResolved})`); 
-        setValues(blueResolved, blueResolved, '3s');
+        setValues(blueResolved, blueResolved, blueDelay);
     }catch(err) {
         log(`❌ Rejected the color ${err}.`, true);
     };

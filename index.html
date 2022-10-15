@@ -43,6 +43,7 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="counter.css">
     
     <title>PromiViz - Visualize Promise APIs</title>
 </head>
@@ -120,6 +121,17 @@
                         <option value="allSettled">Promise.allSettled</option>
                     </select>
                 </section>
+                <!-- Timer -->
+                <div id="timer">
+                    <div>
+                      <span class="seconds" id="second">0</span>
+                      <div class="smalltext">Seconds</div>
+                    </div>
+                    <div>
+                        <span class="milliseconds" id="millisecond">0</span>
+                        <div class="smalltext">Milliseconds</div>
+                      </div>
+                </div>
             </div>
 
             <div id='explanation-id' class='explanation'>
