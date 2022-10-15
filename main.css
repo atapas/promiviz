@@ -241,6 +241,10 @@ header h1 {
     background-color: #f94747;
 }
 
+li.color:hover {
+    width: 12px;
+}
+
 ::selection {
     background: #ff6600;
     text-shadow: none;
@@ -334,6 +338,7 @@ footer {
 
   .sidenav a.item input {
     margin-top: 8px;
+    margin-left: 30px;
   }
   
   .sidenav a:hover {
