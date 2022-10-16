@@ -60,7 +60,7 @@ const selectDelay = () => {
 }
 
 
-// Create timer
+// Create timer 
 const startTimer = (deadline) => {
     var seconds = 0; 
 
