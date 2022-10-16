@@ -42,26 +42,35 @@ console.log(`Initial rejections: red - ${rejectRed}, green - ${rejectGreen}, blu
 let retainLogs = window.localStorage.getItem('promiviz-persist-logs') || false;
 document.getElementById('persist-logs').checked = (retainLogs === 'true');
 
+// Define min and max delay 
+var minDelay = [redDelay, greenDelay, blueDelay].reduce((a, b) => a < b ? a : b) / 1000;
+var maxDelay = [redDelay, greenDelay, blueDelay].reduce((a, b) => a > b ? a : b) / 1000;
+
 // Call this function when a delay is set for a color
 const selectDelay = () => {
     redDelay = document.getElementById("red-delays-id").value;
     greenDelay = document.getElementById("green-delays-id").value;
     blueDelay = document.getElementById("blue-delays-id").value;
+
+    minDelay = [redDelay, greenDelay, blueDelay].reduce((a, b) => a < b ? a : b) / 1000;
+    maxDelay = [redDelay, greenDelay, blueDelay].reduce((a, b) => a > b ? a : b) / 1000;
+
     console.log(`Delays: red - ${redDelay}, green - ${greenDelay}, blue - ${blueDelay}`);
     selectValue();
 }
 
+
 // Create timer
-const startTimer = (timerStop) => {
-    var timer = 0
+const startTimer = (deadline) => {
+    var seconds = 0; 
+
     var x = setInterval(function() {
-        document.getElementById("millisecond").innerHTML = timer; 
-        document.getElementById("second").innerHTML = Math.floor(timer / 1000); 
-        timer += 1;
-        if ((timer / 1000) === timerStop+1 ) {
-            clearInterval(x);
-        }
-    }, 1);
+        seconds += 1;
+        document.getElementById("second").innerHTML = seconds;
+        deadline -= 1;
+        if(deadline === 0) clearInterval(x);
+
+    }, 1000);
 }
 
 
@@ -76,6 +85,7 @@ const rejectColor = () => {
 
 // Call this method when a Promise API is selected
 const selectValue = () => {
+    // startTimer();
     clear();
     if (!retainLogs) {
         clearLogs();
@@ -213,6 +223,7 @@ const explain = msg => {
 
 // Handle the Promise.all() API
 const handleAll = async () => {
+    startTimer(maxDelay);
     try {
         log(`🕛 Started handling all the colors using Promise.all([red, green, blue])`);
 
@@ -221,11 +232,13 @@ const handleAll = async () => {
                 rejectRed ? reject('red') : resolve('red');
             }, redDelay);
         });
+
         const green = new Promise((resolve, reject) => {
             setTimeout(() => {
                 rejectGreen ? reject('green') : resolve('green');
             }, greenDelay);
         });
+
         const blue = new Promise((resolve, reject) => {
             setTimeout(() => {
                 rejectBlue ? reject('blue') : resolve('blue');
@@ -235,7 +248,7 @@ const handleAll = async () => {
         const colors = await Promise.all([red, green, blue]);
         console.log(colors);
         colors.forEach(color => {
-            setValues(color, color, Math.max([redDelay, greenDelay, blueDelay]) + 's');
+            setValues(color, color, maxDelay + 's');
         })
         log(`✔️ Finished handling all the colors using Promise.all([red, green, blue])`); 
     }catch(err) {
@@ -245,6 +258,7 @@ const handleAll = async () => {
 
 // Handle the Promise.any() API
 const handleAny = async () => {
+    startTimer(minDelay);
     try {
         log(`🕛 Started handling any of the colors using Promise.any([red, green, blue])`); 
 
@@ -267,7 +281,7 @@ const handleAny = async () => {
 
         const color = await Promise.any([red, green, blue]);
         log(`${color} got picked up! Lucky one.`);
-        setValues(color, color, Math.min([redDelay, greenDelay, blueDelay]) + 's');
+        setValues(color, color, minDelay + 's');
         log(`✔️Finished handling any of the colors using Promise.any([red, green, blue])`); 
     }catch(err) {
         log(`❌ Rejected the color ${err}.`, true);
@@ -276,6 +290,7 @@ const handleAny = async () => {
 
 // Handle the Promise.race() API
 const handleRace = async () => {
+    startTimer(minDelay);
     try{
         log(`🕛 Started racing of the colors using Promise.race([red, green, blue])`);
 
@@ -297,7 +312,7 @@ const handleRace = async () => {
 
         const color = await Promise.race([ green, red, blue]);
         log(`${color} own the race! Great champ.`);
-        setValues(color, color, Math.min([redDelay, greenDelay, blueDelay]) + 's');
+        setValues(color, color, minDelay + 's');
         log(`✔️ Finished racing of the colors using Promise.race([red, green, blue])`);
         
     } catch(err) {
@@ -307,6 +322,7 @@ const handleRace = async () => {
 
 // Handle the Promise.allSettled() API
 const handleAllSettled = async () => {
+    startTimer(maxDelay);
     log(`🕛 Started settling of the colors using Promise.allSettled([red, green, blue])`); 
     
     const red = new Promise((resolve, reject) => {
@@ -335,7 +351,7 @@ const handleAllSettled = async () => {
         if (status === 'rejected') {
             log(`❌ Rejected the color ${reason}.`, true);
         } else if (status === 'fulfilled') {
-            setValues(value, value, Math.max([redDelay, greenDelay, blueDelay]) + 's');
+            setValues(value, value, maxDelay + 's');
         }
     }
 
@@ -344,6 +360,7 @@ const handleAllSettled = async () => {
 
 // Handle the Promise.resolve() API
 const handleResolve = async () => {
+    startTimer(maxDelay);
     try {
         log(`🕛 Resolving all colors individually with Promise.resolve(color => red, green, blue)`); 
         const red = new Promise((resolve, reject) => {
