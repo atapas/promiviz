@@ -68,7 +68,9 @@ const startTimer = (deadline) => {
         seconds += 1;
         document.getElementById("second").innerHTML = seconds;
         deadline -= 1;
+        // stop timer
         if(deadline === 0) clearInterval(x);
+        
 
     }, 1000);
 }
@@ -139,6 +141,7 @@ const selectValue = () => {
             break
         default:
             explain(``);
+            document.getElementById("second").innerHTML = "0";
             break;
     }
 };
