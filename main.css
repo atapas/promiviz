@@ -80,19 +80,32 @@ header h1 {
 }
 
 .red {
-    background-color: #f43f3f;
+    background-color: #f74b4b;
+    color: #000;
+    transition: all 1s ease 0s;
+}
+.red:hover {
+    background-color: #d50d0d;
     color: #fff;
 }
 .green {
     background-color: #4fff4f;
     color: #000;
+    transition: all 1s ease 0s;
 }
-
+.green:hover {
+    background-color: #00c800;
+    color: #fff;
+}
 .blue {
     background-color: #8EC5FC;
     color: #000;
+    transition: all 1s ease 0s;
 }
-
+.blue:hover {
+    background-color: #46a0fa;
+    color: #fff;
+}
 .black {
     color: #FFF;
 }
