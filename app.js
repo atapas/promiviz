@@ -61,8 +61,8 @@ const selectDelay = () => {
 
 
 // Create timer 
-const startTimer = (deadline) => {
-    var seconds = 0; 
+const startTimer = (deadline, seconds = 0) => {
+    // var seconds = 0; 
 
     var x = setInterval(function() {
         seconds += 1;
@@ -87,7 +87,6 @@ const rejectColor = () => {
 
 // Call this method when a Promise API is selected
 const selectValue = () => {
-    // startTimer();
     clear();
     if (!retainLogs) {
         clearLogs();
