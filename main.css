@@ -6,6 +6,7 @@ body, html {
     transition: 0.5s;
     font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
+    height: 100vh;
 }
 body.blue {
     background-color: #0093e9;
