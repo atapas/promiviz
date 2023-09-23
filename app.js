@@ -20,6 +20,7 @@ const getTimeClock = (showMs) => {
     return showMs ? `${h}:${m}:${s}:${ms}` : `${h}:${m}:${s}`; 
 };
 
+
 // Pad the single digit numbers with zero
 const padWithZero = (num) => {
     if (num < 10) {num = "0" + num};

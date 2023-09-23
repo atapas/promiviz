@@ -21,6 +21,7 @@ self.addEventListener("install", installEvent => {
   )
 });
 
+
 self.addEventListener('activate', event => {
   // delete any caches that aren't in expectedCaches
   // which will get rid of promiviz
