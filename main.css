@@ -173,34 +173,34 @@ header h1 {
     font: 1.3rem Inconsolata, monospace;
     text-shadow: 0 0 5px #C8C8C8;
     width: 100%;
-    border: 10px solid orange;
+    border: 3px solid white;
 }
 
 .logs.green {
     background-image: radial-gradient(
-        rgba(0, 150, 0, 0.75), black 120%
+        rgba(76, 219, 76, 0.75), black 250%
     );
 }
 
 .logs.purple {
     background-image: radial-gradient(
-        rgb(150 0 117 / 75%), black 120%
+        rgba(231, 109, 208, 0.95), black 250%
     )
 }
 
 .logs.red {
-    background-image: radial-gradient( #f00, black 120% );
+    background-image: radial-gradient( rgb(225, 50, 50), black 350% );
 }
 
 .logs.blue {
     background-image: radial-gradient(
-        #00c2ff, black 120%
+        #00c2ff, black 250%
     )
 }
 
 .logs.black {
     background-image: radial-gradient(
-        #000, black 120%
+        #2e2c2c, black 250%
     )
 }
 
