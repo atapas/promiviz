@@ -8,37 +8,48 @@ body, html {
     scroll-behavior: smooth;
     height: 100vh;
 }
+
+/* changes */
 body.blue {
-    background: rgb(9,57,121);
-    background: linear-gradient(90deg, rgba(9,57,121,1) 25%, rgba(44,164,188,1) 67%);
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+    background-size: 100% 820px;
 }
 
 body.red {
-    background: rgb(171,49,49);
-background: linear-gradient(90deg, rgb(172, 20, 20) 0%, rgb(161, 136, 46) 100%);
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    background-size: 100% 820px;
 }
 
 body.purple {
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-size: 100% 820px;
 }
 
 body.green {
-    background: rgb(60,126,47);
-background: linear-gradient(90deg, rgba(60,126,47,1) 58%, rgba(44,188,73,1) 100%);
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+    background-size: 100% 820px;
 }
 
 body.black {
-    background: radial-gradient(circle at -4% -12.9%, rgb(74, 98, 110) 0.3%, rgb(30, 33, 48) 90.2%);
+    background-color: #000000;
+    background-image: linear-gradient(62deg, #615a5a 0%, #a28db6 100%);
+    background-size: 100% 820px;
 }
 
+/* changes */
 select {
     height: 25px;
+    border-radius: 4px;
     border-radius: 40px;
     border: 2px solid white;
     background-color: transparent;
     font-weight: bold;
     text-align: center;
+    padding: 0px 15px 0px 15px;
 }
 
 a:visited{
@@ -71,7 +82,6 @@ header h1 {
 }
 
 .config {
-    border: 3px solid white;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -84,16 +94,16 @@ header h1 {
 }
 
 .red {
-    background-color: rgb(132, 0, 0);
+    background-color: #f43f3f;
     color: #fff;
 }
 .green {
-    background-color: rgb(0, 128, 0);
+    background-color: #4fff4f;
     color: #000;
 }
 
 .blue {
-    background-color: rgb(0, 0, 170);
+    background-color: #8EC5FC;
     color: #000;
 }
 
@@ -102,23 +112,23 @@ header h1 {
 }
 
 .config.blue{
-    background-color: rgb(143, 227, 242);
+    background-color: #80D0C7;
 }
 
 .config.red{
-    background-color: #e12b2b;
+    background-color: #FF2525;
 }
 
 .config.purple{
-    background-color: #c640b8;
+    background-color: #FFCC70;
 }
 
 .config.green{
-    background-color: #77bd7b;
+    background-color: #16A085;
 }
 
 .config.black{
-    background-color: #414141;
+    background-color: #a28db6;
 }
 
 
@@ -128,51 +138,22 @@ header h1 {
     justify-content: space-around;
     align-items: center;
 }
-
-.actions{
-    display: flex;
-    justify-content: space-evenly;
-}
 .colors .actions {
     font-size: 20px;
-    font-weight: bold;
-    gap: 10px;
-}
-
-
-#red-delays-id{
-    display: flex;
-    padding-left:10px;
-    margin-top: 2px;
-    font-weight: bold;
-}
-
-#green-delays-id{
-    display: flex;
-    padding-left:10px;
-    margin-top: 2px;
-    font-weight: bold;
-}
-
-#blue-delays-id{
-    display: flex;
-    padding-left:10px;
-    margin-top: 2px;
-    font-weight: bold;
 }
 
 .colors div {
-    margin: 20px;
-    border: 3px solid white;
+    margin: 10px;
+    border: 1px solid #ebebeb;
     border-radius: 5px;
     width: 100%;
     text-align: center;
 }
 
 .colors .color-text {
-    font-size: 23px;
-    font-weight:bold;
-    font-family: 'Poppins';
+    font-size: 35px;
+    font-weight: 900;
+    font-family: monospace;
     text-transform: uppercase;
 }
 
@@ -197,43 +178,43 @@ header h1 {
 }
 
 .logs {
-    display: flex;
-    text-decoration: underline;
-    justify-content: center;
     padding: 10px;
     margin: 15px;
     border-radius: 5px;
     background-color: black;
     color: white;
     font: 1.3rem Inconsolata, monospace;
-    text-shadow: 0 0 5px black;
+    text-shadow: 0 0 5px #C8C8C8;
     width: 100%;
-    border: 3px solid white;
+    border: 10px solid orange;
 }
 
 .logs.green {
-    background: rgb(0,77,7);
-background: radial-gradient(circle, rgba(0,77,7,1) 58%, rgba(44,188,62,1) 100%);
+    background-image: radial-gradient(
+        rgba(0, 150, 0, 0.75), black 120%
+    );
 }
 
 .logs.purple {
-    background: rgb(106,34,92);
-background: radial-gradient(circle, rgba(106,34,92,1) 54%, rgba(156,44,188,1) 100%);
+    background-image: radial-gradient(
+        rgb(150 0 117 / 75%), black 120%
+    )
 }
 
 .logs.red {
-    background: rgb(84, 34, 19);
-background: radial-gradient(circle, rgb(214, 5, 5) 0%, rgb(60, 34, 21) 100%);
+    background-image: radial-gradient( #f00, black 120% );
 }
 
 .logs.blue {
-    background: rgb(15,38,71);
-background: radial-gradient(circle, rgba(15,38,71,1) 55%, rgba(9,57,121,1) 100%);
+    background-image: radial-gradient(
+        #00c2ff, black 120%
+    )
 }
 
 .logs.black {
-    background: rgb(0,0,0);
-    background: radial-gradient(circle, rgba(0,0,0,1) 58%, rgba(115,115,115,1) 100%);
+    background-image: radial-gradient(
+        #000, black 120%
+    )
 }
 
 .log-settings {
@@ -341,8 +322,7 @@ background: radial-gradient(circle, rgba(15,38,71,1) 55%, rgba(9,57,121,1) 100%)
 footer {
     margin: 0 auto;
     padding: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1rem;
 }
 
 .sidenav {
@@ -404,25 +384,3 @@ footer {
     transition: transform 0.1s ease-in;
 }
 
-
-
-::-webkit-scrollbar-track {
-    background-color: black;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: white;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
-  }
-  ::-webkit-scrollbar {
-    width: 23px;
-  }
-
-  .logs ::-webkit-scrollbar-track {
-    border-radius: 40px;
-  }
-
-  .logs ::-webkit-scrollbar {
-    width: 18px;
-  }
