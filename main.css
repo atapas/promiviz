@@ -40,6 +40,13 @@ body.black {
     background-size: 100% 820px;
 }
 
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #333; /* Change to your preferred dark background color */
+    color: #fff; /* Change to your preferred dark text color */
+}
+/* Add any other styles for Dark Mode here */
+
 /* changes */
 select {
     height: 25px;

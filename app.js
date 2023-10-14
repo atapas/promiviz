@@ -363,3 +363,23 @@ const handleResolve = async () => {
         log(`❌ Rejected the color ${err}.`, true);
     };
 };
+
+// Function to toggle Dark Mode on or off
+function toggleDarkMode() {
+    // Get a reference to the document's body element
+    const body = document.body;
+    
+    // Toggle the "dark-mode" class on the body element to change the theme
+    body.classList.toggle("dark-mode");
+    
+    // Check if Dark Mode is active after toggling
+    const isDarkMode = body.classList.contains("dark-mode");
+    
+    // Store the Dark Mode preference in local storage for future visits
+    localStorage.setItem("darkMode", isDarkMode);
+}
+
+// Check if the user has previously enabled Dark Mode and apply it
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+}
