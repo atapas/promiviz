@@ -1,231 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="manifest" href="manifest.json" />
 
     <!-- ios support -->
-    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" href="images/icons/android-chrome-192x192.png" />
-    <link rel="apple-touch-icon" href="images/icons/android-chrome-384x384.png" />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/icons/android-chrome-384x384.png"
+    />
     <meta name="apple-mobile-web-app-status-bar" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
-    
-    <meta name="description" content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!">
+
+    <meta
+      name="description"
+      content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!"
+    />
     <meta name="robots" content="index, follow" />
-    
+
     <!-- Open Graph support -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="PromiViz - Visualize Promise APIs" />
-    <meta property="og:description" content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!"/>
-    <meta property="og:image" content="https://promiviz.vercel.app/social/landing.png" />
+    <meta
+      property="og:description"
+      content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!"
+    />
+    <meta
+      property="og:image"
+      content="https://promiviz.vercel.app/social/landing.png"
+    />
     <meta property="og:url" content="https://promiviz.vercel.app/" />
     <meta property="og:site_name" content="PromiViz" />
-    
+
     <!-- Twitter Card support -->
-    <meta name="twitter:title" content="PromiViz - Visualize Promise APIs">
-    <meta name="twitter:description" content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!">
-    <meta name="twitter:image" content="https://promiviz.vercel.app/social/landing.png"> 
-    <meta name="twitter:site" content="@tapasadhikary">
-    <meta name="twitter:creator" content="@tapasadhikary">
-    
+    <meta name="twitter:title" content="PromiViz - Visualize Promise APIs" />
+    <meta
+      name="twitter:description"
+      content="Visualize the JavaScript Promise APIs and learn. It is a playground to learn about promises faster, ever!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://promiviz.vercel.app/social/landing.png"
+    />
+    <meta name="twitter:site" content="@tapasadhikary" />
+    <meta name="twitter:creator" content="@tapasadhikary" />
+
     <!-- Fav Icon support -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>">
-    
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>"
+    />
+
     <!-- Font support -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="main.css">
-    
+    <link rel="stylesheet" href="main.css" />
+
     <title>PromiViz - Visualize Promise APIs</title>
-</head>
-<body class="purple">
+  </head>
+  <body class="purple">
     <main>
-        <header>
-            <h1>🤝 PromiViz</h1>
-            <div>
-                <span style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
-            </div>
-        </header>
 
-        <div id="sidenav-id" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a class="item" href="#" title="Clear Logs" onclick="clearLogs()">Clear Logs</a>
-            <a class="item" href="#" title="Persist Logs">
-                Persist Logs
-                <input type="checkbox" id="persist-logs" onclick="persistLogs()" />
-            </a>
-            <div class="log-settings">
-                <a class="item" href="#">Set a Theme</a>
-                <ui class="log-theme">
-                    <li title="Set the blue theme" class="blue" onclick="setTheme('blue')"></li>
-                    <li title="Set the red theme" class="red" onclick="setTheme('red')"></li>
-                    <li title="Set the purple theme" class="purple" onclick="setTheme('purple')"></li>
-                    <li title="Set the green theme" class="green" onclick="setTheme('green')"></li>
-                    <li title="Set the black theme" class="black" onclick="setTheme('black')"></li>
-                </ui>
-            </div>
-            <hr />
-            <div class="social">
-                <a 
-                    href="https://github.com/atapas/promiviz" 
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    title="See the source code">
-                        <img 
-                            src='./images/github.png'
-                        width="30px"
-                        height="30px" />
-                </a>
-                <a 
-                    href="https://youtube.com/@tapasadhikary" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Subscribe to tapaScript" >
-                        <img 
-                            src='./images/youtube.png'
-                            width="32px"
-                            height="32px" />
-                </a>
-                <a 
-                    href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Tweet about it" >
-                        <img 
-                            src='./images/twitter.png'
-                            width="30px"
-                            height="30px" />
-                </a>
-                <a 
-                    href="https://blog.greenroots.info/series/javascript-promises" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Read about Promises" >
-                        <img 
-                            src='./images/blog.png'
-                            width="30px"
-                            height="30px" />
-                </a>
-            </div>
-        </div>
-        <div class="content">
-            <div class="config purple">
-                <section class="select-api">
-                    <label for="apis-list-id">Select an API:</label>
+      <!-- Color Thema Start -->
+      <div class="log-settings">
+            <p class="item">Theme</p>
+            <ul class="log-theme">
+                <li
+                    title="Set the blue theme"
+                    class="blue"
+                    onclick="setTheme('blue')"
+                ></li>
+                <li
+                    title="Set the red theme"
+                    class="red"
+                    onclick="setTheme('red')"
+                ></li>
+                <li
+                    title="Set the purple theme"
+                    class="purple"
+                    onclick="setTheme('purple')"
+                ></li>
+                <li
+                    title="Set the green theme"
+                    class="green"
+                    onclick="setTheme('green')"
+                ></li>
+                <li
+                    title="Set the black theme"
+                    class="black"
+                    onclick="setTheme('black')"
+                ></li>
+            </ul>
+      </div>
+      <!-- Color Thema End -->
 
-                    <select name="apis" id="apis-list-id" onchange="selectValue()">
-                        <option value="select">------SELECT------</option>
-                        <option value="all">Promise.all</option>
-                        <option value="allSettled">Promise.allSettled</option>
-                        <option value="any">Promise.any</option>
-                        <option value="race">Promise.race</option>
-                        <option value="handleResolve">Promise.resolve</option>
-                    </select>
-                </section>
-            </div>
+        
+      <div class="content">
 
-            <div id='explanation-id' class='explanation'>
-                
-            </div>
+        <!-- Hero Start -->
+        <div class="content-header">
+                <h1 class="title">🤝 Promi<span>Viz</span></h1>
 
-            <div class="colors">
-                <div>
-                    <p class="actions">
-                        <label for="red-delays-id">Delay</label>
-                        <select name="red-delays" id="red-delays-id" onchange="selectDelay()">
-                            <option value="1000" selected>1 sec</option>
-                            <option value="2000">2 secs</option>
-                            <option value="3000">3 secs</option>
-                            <option value="4000">4 secs</option>
-                            <option value="5000">5 secs</option>
-                            <option value="6000">6 secs</option>
-                            <option value="7000">7 secs</option>
-                            <option value="8000">8 secs</option>
-                            <option value="9000">9 secs</option>
-                            <option value="10000">10 secs</option>
-                        </select>
-                        |
-                        <label for="red-error-id">
-                            Reject
-                            <input type="checkbox" id="red-error-id" onclick="rejectColor('red-error-id')" />
-                        </label>
-                    </p>
-                    <span id="red-id" class="color-text"></span>
+                <div class="content-config">
+                    <div class="config purple">
+                        <section class="select-api">
+                            <label for="apis-list-id">Select an API:</label>
+
+                            <select name="apis" id="apis-list-id" onchange="selectValue()">
+                                <option value="select">------SELECT------</option>
+                                <option value="all">Promise.all</option>
+                                <option value="allSettled">Promise.allSettled</option>
+                                <option value="any">Promise.any</option>
+                                <option value="race">Promise.race</option>
+                                <option value="handleResolve">Promise.resolve</option>
+                            </select>
+                        </section>
+                    </div>
+
+                    <div id="explanation-id" class="explanation">
+                        Chose an API to se details and explenation about it.
+                    </div>
                 </div>
-                <div>
-                    <p class="actions">
-                        <label for="green-delays-id">Delay</label>
-                        <select name="green-delays" id="green-delays-id" onchange="selectDelay()">
-                            <option value="1000">1 sec</option>
-                            <option value="2000">2 secs</option>
-                            <option value="3000" selected>3 secs</option>
-                            <option value="4000">4 secs</option>
-                            <option value="5000">5 secs</option>
-                            <option value="6000">6 secs</option>
-                            <option value="7000">7 secs</option>
-                            <option value="8000">8 secs</option>
-                            <option value="9000">9 secs</option>
-                            <option value="10000">10 secs</option>
-                        </select>
-                        |
+        </div>
+        <!-- Hero End -->
+
+        
+        <!-- Colord Box Start -->
+        <div class="colors">
+                <article class="color-container">
+                    <div class="actions">
+                        <div class="action-left">
+                            <label for="red-delays-id">Delay:</label>
+                            <select
+                            name="red-delays"
+                            id="red-delays-id"
+                            onchange="selectDelay()"
+                            >
+                              <option value="1000" selected>1 sec</option>
+                              <option value="2000">2 secs</option>
+                              <option value="3000">3 secs</option>
+                              <option value="4000">4 secs</option>
+                              <option value="5000">5 secs</option>
+                              <option value="6000">6 secs</option>
+                              <option value="7000">7 secs</option>
+                              <option value="8000">8 secs</option>
+                              <option value="9000">9 secs</option>
+                              <option value="10000">10 secs</option>
+                            </select>
+                        </div>
+
+                        <label class="action-rigth" for="red-error-id">
+                            Reject
+                            <input
+                            type="checkbox"
+                            id="red-error-id"
+                            onclick="rejectColor('red-error-id')"
+                            />
+                        </label>
+                    </div>
+                    <span id="red-id" class="color-text"></span>
+                </article>
+
+                <article class="color-container">
+                    <div class="actions">
+                        <div class="action-left">
+                            <label for="green-delays-id">Delay</label>
+                            <select
+                            name="green-delays"
+                            id="green-delays-id"
+                            onchange="selectDelay()"
+                            >
+                              <option value="1000">1 sec</option>
+                              <option value="2000">2 secs</option>
+                              <option value="3000" selected>3 secs</option>
+                              <option value="4000">4 secs</option>
+                              <option value="5000">5 secs</option>
+                              <option value="6000">6 secs</option>
+                              <option value="7000">7 secs</option>
+                              <option value="8000">8 secs</option>
+                              <option value="9000">9 secs</option>
+                              <option value="10000">10 secs</option>
+                            </select>
+                        </div>
                         <label for="green-error-id">
                             Reject
-                            <input type="checkbox" id="green-error-id" onclick="rejectColor('green-error-id')" />
+                            <input
+                            type="checkbox"
+                            id="green-error-id"
+                            onclick="rejectColor('green-error-id')"
+                            />
                         </label>
-                    </p>
+                    </div>
                     <span id="green-id" class="color-text"></span>
-                </div>
-                <div>
-                    <p class="actions">
-                        <label for="blue-delays-id">Delay</label>
-                        <select name="blue-delays" id="blue-delays-id" onchange="selectDelay()">
-                            <option value="1000">1 sec</option>
-                            <option value="2000">2 secs</option>
-                            <option value="3000">3 secs</option>
-                            <option value="4000">4 secs</option>
-                            <option value="5000" selected>5 secs</option>
-                            <option value="6000">6 secs</option>
-                            <option value="7000">7 secs</option>
-                            <option value="8000">8 secs</option>
-                            <option value="9000">9 secs</option>
-                            <option value="10000">10 secs</option>
-                        </select>
-                        |
+                </article>
+
+                <article class="color-container">
+                    <div class="actions">
+                        <div class="action-left">
+                            <label for="blue-delays-id">Delay</label>
+                            <select
+                            name="blue-delays"
+                            id="blue-delays-id"
+                            onchange="selectDelay()"
+                            >
+                                <option value="1000">1 sec</option>
+                                <option value="2000">2 secs</option>
+                                <option value="3000">3 secs</option>
+                                <option value="4000">4 secs</option>
+                                <option value="5000" selected>5 secs</option>
+                                <option value="6000">6 secs</option>
+                                <option value="7000">7 secs</option>
+                                <option value="8000">8 secs</option>
+                                <option value="9000">9 secs</option>
+                                <option value="10000">10 secs</option>
+                            </select>
+                        </div>
                         <label for="blue-error-id">
                             Reject
-                            <input type="checkbox" id="blue-error-id" onclick="rejectColor('blue-error-id')" />
+                            <input
+                            type="checkbox"
+                            id="blue-error-id"
+                            onclick="rejectColor('blue-error-id')"
+                            />
                         </label>
-                    </p>
+                    </div>
                     <span id="blue-id" class="color-text"></span>
-                </div>
-            </div>
-
-            <div id="log-container" class="logs purple">
-                <div class="log-header">
-                    <h2>Logs</h2>
-                </div>
-                <ul id='log-id'></ul>
-            </div>
-            <footer>
-                Made with ❤️ by 
-                <a 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    href="https://twitter.com/tapasadhikary">
-                    @tapasadhikary
-                </a>
-            </footer>
+                </article>
         </div>
+        <!-- Colord Box End -->
+
+        
+        <!-- Log Start -->
+        <div id="log-container" class="logs purple">
+                <div class="log-header">
+                    <h5>Logs</h5>
+                    <div class="log-header-buttton">
+                        <label id="persist-logs" class="item" title="Persist Logs">
+                            Persist
+                            <input
+                            type="checkbox"
+                            id="persist-logs"
+                            onclick="persistLogs()"
+                            />
+                        </label>
+                        <label class="item" title="Clear Logs" onclick="clearLogs()">Clear</label>
+                    </div>
+                </div>
+                <ul id="log-id"></ul>
+        </div>
+        <!-- Log End -->
+
+            
+        <footer>
+          <p>
+            Made with ❤️ by
+            <a
+              class="footer-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/tapasadhikary"
+            >
+              @tapasadhikary
+            </a>
+          </p>
+          <div class="social">
+            <a
+              href="https://github.com/atapas/promiviz"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="See the source code"
+            >
+              <img src="./images/github.png" width="24px" height="24px" />
+            </a>
+            <a
+              href="https://youtube.com/@tapasadhikary"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Subscribe to tapaScript"
+            >
+              <img src="./images/youtube.png" width="24px" height="24px" />
+            </a>
+            <a
+              href="https://twitter.com/intent/tweet?text=🤝%20PromiViz%20-%20Visualize%20Promise%20APIs&url=https://promiviz.vercel.app/&hashtags=promise,devcommunity,promisviz,100daysofcode,javascript%20by%20@tapasadhikary"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Tweet about it"
+            >
+              <img src="./images/twitter.png" width="24px" height="24px" />
+            </a>
+            <a
+              href="https://blog.greenroots.info/series/javascript-promises"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Read about Promises"
+            >
+              <img src="./images/blog.png" width="24px" height="24px" />
+            </a>
+          </div>
+        </footer>
+      </div>
     </main>
 
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>

@@ -112,7 +112,9 @@ const selectValue = () => {
             handleResolve();
             break
         default:
-            explain(``);
+            explain(
+                `Chose an API to se details and explenation about it.`
+            );
             break;
     }
 };
@@ -172,22 +174,6 @@ const setTheme = (theme) => {
     const config = document.getElementsByClassName("config");
     config[0].classList.remove(itemToRemove);
     config[0].classList.add(theme);
-}
-
-// toggle side nav
-const toggleNav = () => {
-    const navElem = document.getElementById("sidenav-id");
-    if (navElem.classList.contains('active')) {
-        navElem.classList.remove('active');
-    } else {
-        navElem.classList.add('active');
-    }
-}
-
-// close the nav bar
-const closeNav = () => {
-    const navElem = document.getElementById("sidenav-id");
-    navElem.classList.remove('active');
 }
 
 const explain = msg => {
