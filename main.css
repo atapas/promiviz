@@ -55,7 +55,6 @@ select {
 a:visited{
     color: #ebebeb;
 }
-
 header {
     position: sticky;
     top: 0;
@@ -66,7 +65,9 @@ header {
     display: flex;
     justify-content: space-between;
 }
-
+header h1 span{
+    color:crimson;
+}
 header h1 {
     display: flex;
     align-items: center;
