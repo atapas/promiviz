@@ -111,6 +111,20 @@ individual, or aggression toward or disparagement of classes of individuals.
 
 **Consequence**: A permanent ban from any sort of public interaction within
 the community.
+ 
+ ## PR GUIDLINES
+flowchart LR
+    Fork[Fork the project]-->branch[Create a New Branch]
+    branch-->Edit[Edit file]
+    Edit-->commit[Commit the changes]
+    commit -->|Finally|creatpr((Create a Pull Request))
+
+**Thanks for contributing to the Hacktoberfest 😃 🎉! Before submitting your pull request, please check off as many of the items below as you can:
+
+ I have read the Contributing.md file and formatted this PR correctly.
+ I'm not adding a company from the blocklist.
+ I make sure to fix things promptly if an error or suggestion comes up.
+Thanks and Happy Hacktoberfest! 🎉
 
 ## Attribution
 
