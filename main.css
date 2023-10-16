@@ -384,3 +384,38 @@ footer {
     transition: transform 0.1s ease-in;
 }
 
+/*SCROLL BAR*/
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    box-shadow: inset 0 0 5px #494343;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(43deg, #C850C0 0%, #4158D0 46%, #FFCC70 100%);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb.blue {
+    background: linear-gradient(160deg, #054941 0%, #328ec3 100%);
+}
+
+::-webkit-scrollbar-thumb.red {
+    background: linear-gradient(147deg, #d6bd18 0%, #af0b0b 74%);
+}
+
+::-webkit-scrollbar-thumb.purple {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+::-webkit-scrollbar-thumb.green {
+    background: linear-gradient(132deg, #046652 0%, #ffd426 100%);
+}
+
+::-webkit-scrollbar-thumb.black {
+    background: linear-gradient(62deg, #c3a7db 0%, #272222 100%);
+}
