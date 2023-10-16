@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+/* designing the body of homepage */
+
 body, html {
     padding: 0;
     margin: 0;
@@ -55,6 +58,8 @@ select {
 a:visited{
     color: #ebebeb;
 }
+
+/* Designing the header and navigation menu */
 
 header {
     position: sticky;
@@ -156,6 +161,8 @@ header h1 {
     font-family: monospace;
     text-transform: uppercase;
 }
+
+/* Animations */
 
 @keyframes red {
     from {background-color: #f7f6f6; }
@@ -290,6 +297,8 @@ header h1 {
     padding: 0.5rem;
 }
 
+/* Responsive Designing for smaller display sizes */
+
 @media screen and (max-width: 660px) {
    .content {
         margin: 1.5rem
@@ -318,6 +327,8 @@ header h1 {
         height: 560px;
     }
 }
+
+/* Designing the footer */
 
 footer {
     margin: 0 auto;
